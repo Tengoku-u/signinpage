@@ -1,26 +1,23 @@
+import React from "react";
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import React, { Component } from 'react';
 import person from './images/svg.png';
-import google from './images/google.png';
-import twitter from './images/twitter.png';
-import facebook from './images/facebook.png';
 
-import logo from './images/medlocatorproject_1.png';
+import './Signin.css';
 
 
-import './App.css';
-
-function App() {
-  return (
-  
-      <body>
-        {/*<img src={image} className= "BodyImg" alt="medlocator"/>*/}
+export function SignIn() {
+    return (
+      <Router>
         <div>
           <header>
             <img src={logo} className= "MedLogo" alt="medlocator logo"/>
-            <button className= "SignIn">Sign in</button>
+            <Link to= "/SignIn" className="SignIn">Sign In</Link>
           </header>
-          <main>
-              
-            <div className="Form">
+
+          <Route exact path= "/">
+
+          <div className="Form">
               <div className= "buttonSwitcher">
 
               </div>
@@ -43,22 +40,29 @@ function App() {
                 </div>
                 <div>
                   <button className= "SignUp">Sign Up</button>
+          
                 </div>
-                <p>Or continue with these social profiles</p>
-                  <div>
-                  <img src={google} className= "Svg" alt="med"/>
-                  <img src={facebook} className= "Svg" alt="med"/>
-                  <img src={twitter} className= "Svg" alt="med"/>
-                  </div>
-                <p className= "Account">Already have an account? <a className="link" href="www.signin.com">Sign In</a></p>
-              </div>
-            
-              
-          </main>   
+            </div>
+            </Route>
         </div>
-        <footer>&copy; 2021 MedLocator, All rights reserved.</footer>
-      </body>
-         
-  );
+        <Route path= "/SignIn">
+          
+
+
+        </Route>
+      </Router>
+
+
+
+
+
+
+
+
+    );
+
+
+
+
+
 }
-export default App;
